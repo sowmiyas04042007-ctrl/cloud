@@ -1,0 +1,18 @@
+services:
+  frontend:
+    image: cloud-frontend:latest
+    ports:
+      - "80:80"
+    networks:
+      - network-name
+
+  backend:
+    image: cloud-backend:latest
+    ports:
+      - "3000:3000"
+    networks:
+      - network-name
+
+networks:
+  network-name:
+    driver: bridge
