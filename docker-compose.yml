@@ -1,17 +1,17 @@
 services:
   frontend:
-    image: cloud-frontend:latest
+    build: ./frontend
     ports:
       - "80:80"
     networks:
-      - network-name
+      - common-network
 
   backend:
-    image: cloud-backend:latest
+    build: ./dummy-backend
     ports:
       - "3000:3000"
     networks:
-      - network-name
+      - common-network
 
 networks:
   network-name:
